@@ -12,10 +12,12 @@ public class OrdenacaoPessoa {
     this.pessoaList = new ArrayList<>();
   }
 
+//METODO
   public void adicionarPessoa(String nome, int idade, double altura) {
     pessoaList.add(new Pessoa(nome, idade, altura));
   }
 
+  //para criar construtor = ALT+INSERT = GENERATE CODIGO
   public List<Pessoa> ordenarPorIdade() {
     List<Pessoa> pessoasPorIdade = new ArrayList<>(pessoaList);
     if (!pessoaList.isEmpty()) {
@@ -37,7 +39,7 @@ public class OrdenacaoPessoa {
   }
 
   public static void main(String[] args) {
-    OrdenacaoPessoa ordenacaoPessoa = new OrdenacaoPessoa();
+    OrdenacaoPessoa ordenacaoPessoa = new OrdenacaoPessoa();//INSTANCIEI
 
     ordenacaoPessoa.adicionarPessoa("Nome 1", 20, 1.56);
     ordenacaoPessoa.adicionarPessoa("Nome 2", 30, 1.80);

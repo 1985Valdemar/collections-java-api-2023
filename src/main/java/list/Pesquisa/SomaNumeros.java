@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SomaNumeros {
-  //atributos
+  //atributos <>=LIST GENERICA
   private List<Integer> numeros;
 
   //construtor
@@ -25,14 +25,14 @@ public class SomaNumeros {
 
   public int encontrarMaiorNumero() {
     int maiorNumero = Integer.MIN_VALUE;
-    if (!numeros.isEmpty()) {
+    if (!numeros.isEmpty()) {//LAÇO PARA FAZER LEITURA DO OBJETO = NUMEROS
       for (Integer numero : numeros) {
         if (numero >= maiorNumero) {
           maiorNumero = numero;
         }
       }
       return maiorNumero;
-    } else {
+    } else { //TRATAMENTO EXEÇOES SE NÃO TIVER ESCREVA FRASE
       throw new RuntimeException("A lista está vazia!");
     }
   }

@@ -24,11 +24,23 @@ public class Contato {
     this.numero = numero;
   }
 
+
+  //para ficar formatado certinho
+  //para Nào mostrar endereço memoria no console
+  //QUANDO IMPRIMIR
+  @Override
+  public String toString() {
+    return "{" + nome +"," + numero +"}";//ira imprimir nome, numero
+    /* "{" + "nome='" + nome + '\'' + ", numero=" + numero + '}';*/
+  }
+
+
+//metodo equals hashCode vai verificar duplicidade de nome ou numero vai depedender da regra
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
     if (!(o instanceof Contato contato)) return false;
-    return Objects.equals(getNome(), contato.getNome());
+    return getNome().equals(contato.getNome());
   }
 
   @Override
@@ -36,8 +48,4 @@ public class Contato {
     return Objects.hash(getNome());
   }
 
-  @Override
-  public String toString() {
-    return "{" + nome + "," + numero + "}";
-  }
 }

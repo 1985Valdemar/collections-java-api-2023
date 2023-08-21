@@ -7,14 +7,19 @@ public class AgendaContatos {
   //atributo
   private Set<Contato> contatosSet;
 
+
+  //Contrutor a vazio para intancia HASHSET<>() = VAZIO
   public AgendaContatos() {
     this.contatosSet = new HashSet<>();
   }
 
+
+  //Metodo Add ADICIONAR
   public void adicionarContato(String nome, int numero) {
     contatosSet.add(new Contato(nome, numero));
   }
 
+  //Metodo void para IMPRIMIR
   public void exibirContatos() {
     if (!contatosSet.isEmpty()) {
       System.out.println(contatosSet);
@@ -23,12 +28,13 @@ public class AgendaContatos {
     }
   }
 
+  //Metodo Para retornar Set=List
   public Set<Contato> pesquisarPorNome(String nome) {
-    Set<Contato> contatosPorNome = new HashSet<>();
-    if (!contatosSet.isEmpty()) {
+    Set<Contato> contatosPorNome = new HashSet<>();//new HashSet<>()para adicionar ONDEM ALEATORIA
+   if (!contatosSet.isEmpty()) {
       for (Contato c : contatosSet) {
-        if (c.getNome().startsWith(nome)) {
-          contatosPorNome.add(c);
+        if (c.getNome().startsWith(nome)) {//se contato = C, STARTSWITH = String =nome
+          contatosPorNome.add(c);//add = adicionar Set contato
         }
       }
       return contatosPorNome;
@@ -37,14 +43,15 @@ public class AgendaContatos {
     }
   }
 
+  //metodo retornar contato
   public Contato atualizarNumeroContato(String nome, int novoNumero) {
-    Contato contatoAtualizado = null;
+    Contato contatoAtualizado = null;//null =depois que atualizar referenciar a variavel no caso contatoAtualizado
     if (!contatosSet.isEmpty()) {
-      for (Contato c : contatosSet) {
+      for (Contato c : contatosSet) {//para percorrer
         if (c.getNome().equalsIgnoreCase(nome)) {
-          c.setNumero(novoNumero);
-          contatoAtualizado = c;
-          break;
+          c.setNumero(novoNumero);//c.setNumero= "passar novo"(novoNumero)
+          contatoAtualizado = c;//contato Atualizadado para retornar CONTATO
+          break;//PARAR LAÇO
         }
       }
       return contatoAtualizado;
@@ -59,7 +66,7 @@ public class AgendaContatos {
     agendaContatos.exibirContatos();
 
     agendaContatos.adicionarContato("Camila", 123456);
-    agendaContatos.adicionarContato("Camila", 5665);
+    agendaContatos.adicionarContato("Frank", 5665);
     agendaContatos.adicionarContato("Camila", 5665);
     agendaContatos.adicionarContato("Camila Cavalcante", 1111111);
     agendaContatos.adicionarContato("Camila DIO", 654987);

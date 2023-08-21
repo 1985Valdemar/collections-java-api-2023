@@ -6,34 +6,34 @@ import java.util.Set;
 public class ConjuntoConvidados {
   //atributo
   private Set<Convidado> convidadosSet;
-
+//Construtor
   public ConjuntoConvidados() {
     this.convidadosSet = new HashSet<>();
   }
-
+//metodo
   public void adicionarConvidado(String nome, int codigoConvite) {
     convidadosSet.add(new Convidado(nome, codigoConvite));
   }
-
+//metodo
   public void removerConvidadoPorCodigoConvite(int codigoConvite) {
     Convidado convidadoParaRemover = null;
     if (!convidadosSet.isEmpty()) {
-      for (Convidado c : convidadosSet) {
-        if (c.getCodigoConvite() == codigoConvite) {
+      for (Convidado c : convidadosSet) {//se dentro convidado
+        if (c.getCodigoConvite() == codigoConvite) {//se c.getCodi for = codigoconvite = remover
           convidadoParaRemover = c;
-          break;
+          break;//parar laço pois ja achou
         }
       }
-      convidadosSet.remove(convidadoParaRemover);
-    } else {
+      convidadosSet.remove(convidadoParaRemover);//objeto para remover
+    } else {//Exception se não existir este codigo impimir está vazio
       throw new RuntimeException("O conjunto está vazio!");
     }
   }
-
+//metodo
   public int contarConvidados() {
     return convidadosSet.size();
   }
-
+//metodo
   public void exibirConvidados() {
     if (!convidadosSet.isEmpty()) {
       System.out.println(convidadosSet);
@@ -43,7 +43,7 @@ public class ConjuntoConvidados {
   }
 
   public static void main(String[] args) {
-    ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();
+    ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();//instanciado objeto
     System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " convidado(s) dentro do Set de Convidados");
 
     conjuntoConvidados.adicionarConvidado("Convidado 1", 1234);

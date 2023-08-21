@@ -17,7 +17,7 @@ public class CadastroProdutos {
   }
 
   public Set<Produto> exibirProdutosPorNome() {
-    Set<Produto> produtosPorNome = new TreeSet<>(produtoSet);
+    Set<Produto> produtosPorNome = new TreeSet<>(produtoSet);//PARA ORGANIZAR POR NOME
     if (!produtoSet.isEmpty()) {
       return produtosPorNome;
     } else {
@@ -26,7 +26,7 @@ public class CadastroProdutos {
   }
 
   public Set<Produto> exibirProdutosPorPreco() {
-    Set<Produto> produtosPorPreco = new TreeSet<>(new ComparatorPorPreco());
+    Set<Produto> produtosPorPreco = new TreeSet<>(new ComparatorPorPreco());//ORDERM POR PREÇO
     if (!produtoSet.isEmpty()) {
       produtosPorPreco.addAll(produtoSet);
       return produtosPorPreco;
@@ -36,7 +36,7 @@ public class CadastroProdutos {
   }
 
   public static void main(String[] args) {
-    CadastroProdutos cadastroProdutos = new CadastroProdutos();
+    CadastroProdutos cadastroProdutos = new CadastroProdutos();//INSTANCIADO CADASTROPRODUTOS
 
     cadastroProdutos.adicionarProduto(1L, "Produto 5", 15d, 5);
     cadastroProdutos.adicionarProduto(2L, "Produto 0", 20d, 10);
